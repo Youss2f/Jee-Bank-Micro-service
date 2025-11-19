@@ -101,7 +101,7 @@ expand_less
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>ecom-ii-bdcc-app</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -139,7 +139,7 @@ expand_less
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>net.youssfi</groupId>
+	<groupId>net.atertour</groupId>
 	<artifactId>customer-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>customer-service</name>
@@ -218,7 +218,7 @@ expand_less
 	</build>
 </project>`
 
-**File: customer-service/src/main/java/net/youssfi/customerservice/entities/Customer.java**
+**File: customer-service/src/main/java/net/atertour/customerservice/entities/Customer.java**
 
 code Java
 
@@ -226,7 +226,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.customerservice.entities;
+    `package net.atertour.customerservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -243,7 +243,7 @@ public class Customer {
     private String email;
 }`
 
-**File: customer-service/src/main/java/net/youssfi/customerservice/repository/CustomerRepository.java**
+**File: customer-service/src/main/java/net/atertour/customerservice/repository/CustomerRepository.java**
 
 code Java
 
@@ -251,9 +251,9 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.customerservice.repository;
+    `package net.atertour.customerservice.repository;
 
-import net.youssfi.customerservice.entities.Customer;
+import net.atertour.customerservice.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -261,7 +261,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 }`
 
-**File: customer-service/src/main/java/net/youssfi/customerservice/CustomerServiceApplication.java**
+**File: customer-service/src/main/java/net/atertour/customerservice/CustomerServiceApplication.java**
 
 code Java
 
@@ -269,10 +269,10 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.customerservice;
+    `package net.atertour.customerservice;
 
-import net.youssfi.customerservice.entities.Customer;
-import net.youssfi.customerservice.repository.CustomerRepository;
+import net.atertour.customerservice.entities.Customer;
+import net.atertour.customerservice.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -302,7 +302,7 @@ public class CustomerServiceApplication {
     }
 }`
 
-**File: customer-service/src/main/java/net/youssfi/customerservice/config/RestRepositoryConfig.java**
+**File: customer-service/src/main/java/net/atertour/customerservice/config/RestRepositoryConfig.java**
 
 code Java
 
@@ -310,9 +310,9 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.customerservice.config;
+    `package net.atertour.customerservice.config;
 
-import net.youssfi.customerservice.entities.Customer;
+import net.atertour.customerservice.entities.Customer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -326,7 +326,7 @@ public class RestRepositoryConfig implements RepositoryRestConfigurer {
     }
 }`
 
-**File: customer-service/src/main/java/net/youssfi/customerservice/entities/CustomerProjection.java**
+**File: customer-service/src/main/java/net/atertour/customerservice/entities/CustomerProjection.java**
 
 code Java
 
@@ -334,7 +334,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.customerservice.entities;
+    `package net.atertour.customerservice.entities;
 
 import org.springframework.data.rest.core.config.Projection;
 
@@ -344,7 +344,7 @@ public interface CustomerProjection {
     public String getEmail();
 }`
 
-**File: customer-service/src/main/java/net/youssfi/customerservice/entities/CustomerProjectionEmail.java**
+**File: customer-service/src/main/java/net/atertour/customerservice/entities/CustomerProjectionEmail.java**
 
 code Java
 
@@ -352,7 +352,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.customerservice.entities;
+    `package net.atertour.customerservice.entities;
 
 import org.springframework.data.rest.core.config.Projection;
 
@@ -381,7 +381,7 @@ spring.data.rest.base-path=/api`
 
 ### Module 2: inventory-service
 
-**File: inventory-service/src/main/java/net/youssfi/inventoryservice/entities/Product.java**
+**File: inventory-service/src/main/java/net/atertour/inventoryservice/entities/Product.java**
 
 code Java
 
@@ -389,7 +389,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.inventoryservice.entities;
+    `package net.atertour.inventoryservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -405,7 +405,7 @@ public class Product {
     private int quantity;
 }`
 
-**File: inventory-service/src/main/java/net/youssfi/inventoryservice/repository/ProductRepository.java**
+**File: inventory-service/src/main/java/net/atertour/inventoryservice/repository/ProductRepository.java**
 
 code Java
 
@@ -413,9 +413,9 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.inventoryservice.repository;
+    `package net.atertour.inventoryservice.repository;
 
-import net.youssfi.inventoryservice.entities.Product;
+import net.atertour.inventoryservice.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -423,7 +423,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface ProductRepository extends JpaRepository<Product, String> {
 }`
 
-**File: inventory-service/src/main/java/net/youssfi/inventoryservice/InventoryServiceApplication.java**
+**File: inventory-service/src/main/java/net/atertour/inventoryservice/InventoryServiceApplication.java**
 
 code Java
 
@@ -431,10 +431,10 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.inventoryservice;
+    `package net.atertour.inventoryservice;
 
-import net.youssfi.inventoryservice.entities.Product;
-import net.youssfi.inventoryservice.repository.ProductRepository;
+import net.atertour.inventoryservice.entities.Product;
+import net.atertour.inventoryservice.repository.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -477,11 +477,11 @@ public class InventoryServiceApplication {
     }
 }```
 
-**File: `inventory-service/src/main/java/net/youssfi/inventoryservice/config/RestRepositoryConfig.java`**
+**File: `inventory-service/src/main/java/net/atertour/inventoryservice/config/RestRepositoryConfig.java`**
 ```java
-package net.youssfi.inventoryservice.config;
+package net.atertour.inventoryservice.config;
 
-import net.youssfi.inventoryservice.entities.Product;
+import net.atertour.inventoryservice.entities.Product;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -568,7 +568,7 @@ server:
 
 To use this method, the application.yml content above should be removed or commented out.
 
-**File: gateway-service/src/main/java/net/youssfi/gatewayservice/GatewayServiceApplication.java**
+**File: gateway-service/src/main/java/net/atertour/gatewayservice/GatewayServiceApplication.java**
 
 code Java
 
@@ -576,7 +576,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.gatewayservice;
+    `package net.atertour.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -622,7 +622,7 @@ expand_less
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>net.youssfi</groupId>
+	<groupId>net.atertour</groupId>
 	<artifactId>discovery-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>discovery-service</name>
@@ -666,7 +666,7 @@ expand_less
 
 </project>`
 
-**File: discovery-service/src/main/java/net/youssfi/discoveryservice/DiscoveryServiceApplication.java**
+**File: discovery-service/src/main/java/net/atertour/discoveryservice/DiscoveryServiceApplication.java**
 
 code Java
 
@@ -674,7 +674,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.discoveryservice;
+    `package net.atertour.discoveryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -762,7 +762,7 @@ This demonstrates how to make the gateway discover routes automatically from the
 
 **Method 1: Using a Java Configuration Bean**
 
-**File: gateway-service/src/main/java/net/youssfi/gatewayservice/GatewayServiceApplication.java (Modified)**
+**File: gateway-service/src/main/java/net/atertour/gatewayservice/GatewayServiceApplication.java (Modified)**
 
 code Java
 
@@ -770,7 +770,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.gatewayservice;
+    `package net.atertour.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -897,7 +897,7 @@ expand_less
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>net.youssfi</groupId>
+	<groupId>net.atertour</groupId>
 	<artifactId>billing-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>billing-service</name>
@@ -992,13 +992,13 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.entities;
+    `package net.atertour.billingservice.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.youssfi.billingservice.model.Customer;
+import net.atertour.billingservice.model.Customer;
 
 import java.util.Collection;
 import java.util.Date;
@@ -1024,14 +1024,14 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.entities;
+    `package net.atertour.billingservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.youssfi.billingservice.model.Product;
+import net.atertour.billingservice.model.Product;
 
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
@@ -1056,9 +1056,9 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.repository;
+    `package net.atertour.billingservice.repository;
 
-import net.youssfi.billingservice.entities.Bill;
+import net.atertour.billingservice.entities.Bill;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -1068,9 +1068,9 @@ public interface BillRepository extends JpaRepository<Bill,Long> {
 
 **File: `billing-service/src/main/java/.../repository/ProductItemRepository.java`**
 ```java
-package net.youssfi.billingservice.repository;
+package net.atertour.billingservice.repository;
 
-import net.youssfi.billingservice.entities.ProductItem;
+import net.atertour.billingservice.entities.ProductItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -1086,7 +1086,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.model;
+    `package net.atertour.billingservice.model;
 
 import lombok.Data;
 
@@ -1105,7 +1105,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.model;
+    `package net.atertour.billingservice.model;
 
 import lombok.Data;
 
@@ -1125,9 +1125,9 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.feign;
+    `package net.atertour.billingservice.feign;
 
-import net.youssfi.billingservice.model.Customer;
+import net.atertour.billingservice.model.Customer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -1146,9 +1146,9 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.feign;
+    `package net.atertour.billingservice.feign;
 
-import net.youssfi.billingservice.model.Product;
+import net.atertour.billingservice.model.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -1170,13 +1170,13 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice.web;
+    `package net.atertour.billingservice.web;
 
-import net.youssfi.billingservice.entities.Bill;
-import net.youssfi.billingservice.feign.CustomerServiceClient;
-import net.youssfi.billingservice.feign.InventoryServiceClient;
-import net.youssfi.billingservice.repository.BillRepository;
-import net.youssfi.billingservice.repository.ProductItemRepository;
+import net.atertour.billingservice.entities.Bill;
+import net.atertour.billingservice.feign.CustomerServiceClient;
+import net.atertour.billingservice.feign.InventoryServiceClient;
+import net.atertour.billingservice.repository.BillRepository;
+import net.atertour.billingservice.repository.ProductItemRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -1214,16 +1214,16 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.billingservice;
+    `package net.atertour.billingservice;
 
-import net.youssfi.billingservice.entities.Bill;
-import net.youssfi.billingservice.entities.ProductItem;
-import net.youssfi.billingservice.feign.CustomerServiceClient;
-import net.youssfi.billingservice.feign.InventoryServiceClient;
-import net.youssfi.billingservice.model.Customer;
-import net.youssfi.billingservice.model.Product;
-import net.youssfi.billingservice.repository.BillRepository;
-import net.youssfi.billingservice.repository.ProductItemRepository;
+import net.atertour.billingservice.entities.Bill;
+import net.atertour.billingservice.entities.ProductItem;
+import net.atertour.billingservice.feign.CustomerServiceClient;
+import net.atertour.billingservice.feign.InventoryServiceClient;
+import net.atertour.billingservice.model.Customer;
+import net.atertour.billingservice.model.Product;
+import net.atertour.billingservice.repository.BillRepository;
+import net.atertour.billingservice.repository.ProductItemRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -1318,7 +1318,7 @@ expand_less
 		<version>3.3.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>net.youssfi</groupId>
+	<groupId>net.atertour</groupId>
 	<artifactId>config-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>config-service</name>
@@ -1373,7 +1373,7 @@ expand_less
 </project>```
 
 **File: `config-service/src/main/java/.../ConfigServiceApplication.java`**```java
-package net.youssfi.configservice;
+package net.atertour.configservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -1399,7 +1399,7 @@ expand_less
 spring.application.name=config-service
 
 # URI of the Git repository containing configuration files
-spring.cloud.config.server.git.uri=https://github.com/mohamedYoussfi/config-repo-ecom-app.git
+spring.cloud.config.server.git.uri=https://github.com/mohamedatertour/config-repo-ecom-app.git
 
 # This ensures all actuator endpoints are exposed, including /bus-refresh
 management.endpoints.web.exposure.include=*`
@@ -1512,7 +1512,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.customerservice.web;
+    `package net.atertour.customerservice.web;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -1978,7 +1978,7 @@ expand_less
 
 ### Module: gateway-service (Spring Cloud Gateway)
 
-**File: gateway-service/src/main/java/net/youssfi/gatewayservice/GatewayServiceApplication.java (Updated with CORS config)**
+**File: gateway-service/src/main/java/net/atertour/gatewayservice/GatewayServiceApplication.java (Updated with CORS config)**
 
 code Java
 
@@ -1986,7 +1986,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.gatewayservice;
+    `package net.atertour.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -2045,7 +2045,7 @@ public class GatewayServiceApplication {
 
 ---
 
-This document is a comprehensive university lecture or workshop presentation by Mohamed Youssfi on **Distributed Architectures**, focusing on building **Microservices with Spring Boot and Spring Cloud**.
+This document is a comprehensive university lecture or workshop presentation by Mohamed atertour on **Distributed Architectures**, focusing on building **Microservices with Spring Boot and Spring Cloud**.
 
 Here is a summary of the key concepts and takeaways from the presentation:
 
@@ -2254,7 +2254,7 @@ By the end of this assignment, you will have built a complete, functional, and s
 
 ---
 
-Excellent! This video, "Bases de Angular 19 - Demo et Concepts de base" by Mohamed Youssfi, is a comprehensive introduction to the fundamental concepts of the Angular framework, illustrated with a live coding demonstration.
+Excellent! This video, "Bases de Angular 19 - Demo et Concepts de base" by Mohamed atertour, is a comprehensive introduction to the fundamental concepts of the Angular framework, illustrated with a live coding demonstration.
 
 Here is a detailed summary of the key concepts covered, followed by the exact code from the video's practical demonstration.
 
@@ -3063,7 +3063,7 @@ export class AppComponent {
 
 ---
 
-Of course. This document, "Angular 2025.pdf", is a comprehensive presentation by Mohamed Youssfi covering the fundamental concepts of the Angular framework. It builds from basic principles up to a complete demonstration of a full-stack application with a Spring Boot backend and an Angular frontend.
+Of course. This document, "Angular 2025.pdf", is a comprehensive presentation by Mohamed atertour covering the fundamental concepts of the Angular framework. It builds from basic principles up to a complete demonstration of a full-stack application with a Spring Boot backend and an Angular frontend.
 
 Here is a detailed summary of the key concepts, followed by the exact code from the two main case studies presented.
 
@@ -3555,7 +3555,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.gatewayservice.config;
+    `package net.atertour.gatewayservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -3900,7 +3900,7 @@ expand_less
 
 ---
 
-Of course. This is an excellent overview of your final project. The GitHub repository mohamedYoussfi/micro-services-app is the complete source code for the microservice architecture described in your final exam, "Concernant le contrôle" (which evaluates "Activité Pratique N°2").
+Of course. This is an excellent overview of your final project. The GitHub repository mohamedatertour/micro-services-app is the complete source code for the microservice architecture described in your final exam, "Concernant le contrôle" (which evaluates "Activité Pratique N°2").
 
 Let's break down how the repository structure directly corresponds to your assignment.
 
@@ -4015,9 +4015,9 @@ server.port=8887```
 #### **File: `ChatController.java` (Final Version with Agent)**
 This REST controller acts as the entry point for HTTP requests. It delegates the logic to the `AIAgent`.
 ```java
-package net.youssfi.enstbot.web;
+package net.atertour.enstbot.web;
 
-import net.youssfi.enstbot.agents.AIAgent;
+import net.atertour.enstbot.agents.AIAgent;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -4049,7 +4049,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.enstbot.agents;
+    `package net.atertour.enstbot.agents;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
@@ -4190,7 +4190,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.enstbot.agents;
+    `package net.atertour.enstbot.agents;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
@@ -4238,9 +4238,9 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.enstbot.telegram;
+    `package net.atertour.enstbot.telegram;
 
-import net.youssfi.enstbot.agents.AIAgent;
+import net.atertour.enstbot.agents.AIAgent;
 import org.springframework.beans.factory.annotation.Value;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
@@ -4329,7 +4329,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.mcpserver.tools;
+    `package net.atertour.mcpserver.tools;
 
 import org.springaicomunnity.mcp.annotation.McpArg;
 import org.springaicomunnity.mcp.annotation.McpTool;
@@ -4402,7 +4402,7 @@ The instructor demonstrates how to implement this entire flow within the Spring 
 
 The instructor interacts with the Telegram bot to showcase the RAG functionality.
 
-- He asks a specific question about the content of the CV: "What are the diplomas of Youssfi?".
+- He asks a specific question about the content of the CV: "What are the diplomas of atertour?".
 - The system correctly performs the similarity search, finds the relevant text chunks about diplomas in the VectorStore, adds them to the prompt, and the LLM generates a perfectly formatted list of the diplomas.
 - This demonstrates that the agent is no longer limited to its general knowledge but can now reason about specific, user-provided data.
 
@@ -4455,10 +4455,10 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.enstbot;
+    `package net.atertour.enstbot;
 
 import jakarta.annotation.PostConstruct;
-import net.youssfi.enstbot.telegram.TelegramBot;
+import net.atertour.enstbot.telegram.TelegramBot;
 import org.springframework.ai.document.DocumentReader;
 import org.springframework.ai.embedding.EmbeddingClient;
 import org.springframework.ai.reader.pdf.PdfDocumentReader;
@@ -4508,7 +4508,7 @@ downloadcontent_copy
 
 expand_less
 
-    `package net.youssfi.enstbot.agents;
+    `package net.atertour.enstbot.agents;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
@@ -5026,7 +5026,7 @@ curl http://localhost:8888/BILLING-SERVICE/fullBill/1
 2. Search for your bot: @[YourBotUsername]
 3. Send: `/start`
 4. Ask questions like:
-    - "What are the diplomas of Youssfi?"
+    - "What are the diplomas of atertour?"
     - "Get information about employee Mohamed"
     - "List all employees"
 
@@ -5180,7 +5180,7 @@ xsi:schemaLocation="[http://maven.apache.org/POM/4.0.0](http://maven.apache.org/
 <modelVersion>4.0.0</modelVersion>
 
 ```
-<groupId>net.youssfi</groupId>
+<groupId>net.atertour</groupId>
 <artifactId>ecom-microservices-app</artifactId>
 <version>1.0-SNAPSHOT</version>
 <packaging>pom</packaging>
@@ -5253,7 +5253,7 @@ discovery-service/
 ├── src/
 │   └── main/
 │       ├── java/
-│       │   └── net/youssfi/discoveryservice/
+│       │   └── net/atertour/discoveryservice/
 │       │       └── DiscoveryServiceApplication.java
 │       └── resources/
 │           └── application.properties
@@ -5278,7 +5278,7 @@ discovery-service/
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>discovery-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>discovery-service</name>
@@ -5328,7 +5328,7 @@ discovery-service/
 ## DiscoveryServiceApplication.java
 
 ```java
-package net.youssfi.discoveryservice;
+package net.atertour.discoveryservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -5371,7 +5371,7 @@ config-service/
 ├── src/
 │   └── main/
 │       ├── java/
-│       │   └── net/youssfi/configservice/
+│       │   └── net/atertour/configservice/
 │       │       └── ConfigServiceApplication.java
 │       └── resources/
 │           └── application.properties
@@ -5403,7 +5403,7 @@ config-repo/ (Separate directory - can be in Git)
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>config-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>config-service</name>
@@ -5460,7 +5460,7 @@ config-repo/ (Separate directory - can be in Git)
 ## ConfigServiceApplication.java
 
 ```java
-package net.youssfi.configservice;
+package net.atertour.configservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -5593,7 +5593,7 @@ spring.cloud.config.server.git.uri=https://github.com/your-username/config-repo-
 customer-service/
 ├── src/
 │   └── main/
-│       ├── java/net/youssfi/customerservice/
+│       ├── java/net/atertour/customerservice/
 │       │   ├── CustomerServiceApplication.java
 │       │   ├── entities/
 │       │   │   ├── Customer.java
@@ -5629,7 +5629,7 @@ customer-service/
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>customer-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <n>customer-service</n>
@@ -5740,10 +5740,10 @@ customer-service/
 ## CustomerServiceApplication.java
 
 ```java
-package net.youssfi.customerservice;
+package net.atertour.customerservice;
 
-import net.youssfi.customerservice.entities.Customer;
-import net.youssfi.customerservice.repository.CustomerRepository;
+import net.atertour.customerservice.entities.Customer;
+import net.atertour.customerservice.repository.CustomerRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -5794,7 +5794,7 @@ public class CustomerServiceApplication {
 ## entities/Customer.java
 
 ```java
-package net.youssfi.customerservice.entities;
+package net.atertour.customerservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -5822,7 +5822,7 @@ public class Customer {
 ## entities/CustomerProjection.java
 
 ```java
-package net.youssfi.customerservice.entities;
+package net.atertour.customerservice.entities;
 
 import org.springframework.data.rest.core.config.Projection;
 
@@ -5838,7 +5838,7 @@ public interface CustomerProjection {
 ## entities/CustomerProjectionEmail.java
 
 ```java
-package net.youssfi.customerservice.entities;
+package net.atertour.customerservice.entities;
 
 import org.springframework.data.rest.core.config.Projection;
 
@@ -5852,9 +5852,9 @@ public interface CustomerProjectionEmail {
 ## repository/CustomerRepository.java
 
 ```java
-package net.youssfi.customerservice.repository;
+package net.atertour.customerservice.repository;
 
-import net.youssfi.customerservice.entities.Customer;
+import net.atertour.customerservice.entities.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -5867,9 +5867,9 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 ## config/RestRepositoryConfig.java
 
 ```java
-package net.youssfi.customerservice.config;
+package net.atertour.customerservice.config;
 
-import net.youssfi.customerservice.entities.Customer;
+import net.atertour.customerservice.entities.Customer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -5891,7 +5891,7 @@ public class RestRepositoryConfig implements RepositoryRestConfigurer {
 ## web/MyRestController.java
 
 ```java
-package net.youssfi.customerservice.web;
+package net.atertour.customerservice.web;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -5966,7 +5966,7 @@ management.endpoints.web.exposure.include=*
 inventory-service/
 ├── src/
 │   └── main/
-│       ├── java/net/youssfi/inventoryservice/
+│       ├── java/net/atertour/inventoryservice/
 │       │   ├── InventoryServiceApplication.java
 │       │   ├── entities/
 │       │   │   └── Product.java
@@ -5998,7 +5998,7 @@ inventory-service/
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>inventory-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <n>inventory-service</n>
@@ -6109,10 +6109,10 @@ inventory-service/
 ## InventoryServiceApplication.java
 
 ```java
-package net.youssfi.inventoryservice;
+package net.atertour.inventoryservice;
 
-import net.youssfi.inventoryservice.entities.Product;
-import net.youssfi.inventoryservice.repository.ProductRepository;
+import net.atertour.inventoryservice.entities.Product;
+import net.atertour.inventoryservice.repository.ProductRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6179,7 +6179,7 @@ public class InventoryServiceApplication {
 ## entities/Product.java
 
 ```java
-package net.youssfi.inventoryservice.entities;
+package net.atertour.inventoryservice.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -6205,9 +6205,9 @@ public class Product {
 ## repository/ProductRepository.java
 
 ```java
-package net.youssfi.inventoryservice.repository;
+package net.atertour.inventoryservice.repository;
 
-import net.youssfi.inventoryservice.entities.Product;
+import net.atertour.inventoryservice.entities.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -6220,9 +6220,9 @@ public interface ProductRepository extends JpaRepository<Product, String> {
 ## config/RestRepositoryConfig.java
 
 ```java
-package net.youssfi.inventoryservice.config;
+package net.atertour.inventoryservice.config;
 
-import net.youssfi.inventoryservice.entities.Product;
+import net.atertour.inventoryservice.entities.Product;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -6268,7 +6268,7 @@ management.endpoints.web.exposure.include=*
 billing-service/
 ├── src/
 │   └── main/
-│       ├── java/net/youssfi/billingservice/
+│       ├── java/net/atertour/billingservice/
 │       │   ├── BillingServiceApplication.java
 │       │   ├── entities/
 │       │   │   ├── Bill.java
@@ -6308,7 +6308,7 @@ billing-service/
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>billing-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <n>billing-service</n>
@@ -6407,16 +6407,16 @@ billing-service/
 ## BillingServiceApplication.java
 
 ```java
-package net.youssfi.billingservice;
+package net.atertour.billingservice;
 
-import net.youssfi.billingservice.entities.Bill;
-import net.youssfi.billingservice.entities.ProductItem;
-import net.youssfi.billingservice.feign.CustomerServiceClient;
-import net.youssfi.billingservice.feign.InventoryServiceClient;
-import net.youssfi.billingservice.model.Customer;
-import net.youssfi.billingservice.model.Product;
-import net.youssfi.billingservice.repository.BillRepository;
-import net.youssfi.billingservice.repository.ProductItemRepository;
+import net.atertour.billingservice.entities.Bill;
+import net.atertour.billingservice.entities.ProductItem;
+import net.atertour.billingservice.feign.CustomerServiceClient;
+import net.atertour.billingservice.feign.InventoryServiceClient;
+import net.atertour.billingservice.model.Customer;
+import net.atertour.billingservice.model.Product;
+import net.atertour.billingservice.repository.BillRepository;
+import net.atertour.billingservice.repository.ProductItemRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6479,13 +6479,13 @@ public class BillingServiceApplication {
 ## entities/Bill.java
 
 ```java
-package net.youssfi.billingservice.entities;
+package net.atertour.billingservice.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.youssfi.billingservice.model.Customer;
+import net.atertour.billingservice.model.Customer;
 
 import java.util.Collection;
 import java.util.Date;
@@ -6515,14 +6515,14 @@ public class Bill {
 ## entities/ProductItem.java
 
 ```java
-package net.youssfi.billingservice.entities;
+package net.atertour.billingservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.youssfi.billingservice.model.Product;
+import net.atertour.billingservice.model.Product;
 
 @Entity
 @Data
@@ -6550,7 +6550,7 @@ public class ProductItem {
 ## model/Customer.java
 
 ```java
-package net.youssfi.billingservice.model;
+package net.atertour.billingservice.model;
 
 import lombok.Data;
 
@@ -6566,7 +6566,7 @@ public class Customer {
 ## model/Product.java
 
 ```java
-package net.youssfi.billingservice.model;
+package net.atertour.billingservice.model;
 
 import lombok.Data;
 
@@ -6583,9 +6583,9 @@ public class Product {
 ## repository/BillRepository.java
 
 ```java
-package net.youssfi.billingservice.repository;
+package net.atertour.billingservice.repository;
 
-import net.youssfi.billingservice.entities.Bill;
+import net.atertour.billingservice.entities.Bill;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BillRepository extends JpaRepository<Bill, Long> {
@@ -6596,9 +6596,9 @@ public interface BillRepository extends JpaRepository<Bill, Long> {
 ## repository/ProductItemRepository.java
 
 ```java
-package net.youssfi.billingservice.repository;
+package net.atertour.billingservice.repository;
 
-import net.youssfi.billingservice.entities.ProductItem;
+import net.atertour.billingservice.entities.ProductItem;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductItemRepository extends JpaRepository<ProductItem, Long> {
@@ -6609,9 +6609,9 @@ public interface ProductItemRepository extends JpaRepository<ProductItem, Long> 
 ## feign/CustomerServiceClient.java
 
 ```java
-package net.youssfi.billingservice.feign;
+package net.atertour.billingservice.feign;
 
-import net.youssfi.billingservice.model.Customer;
+import net.atertour.billingservice.model.Customer;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6628,9 +6628,9 @@ public interface CustomerServiceClient {
 ## feign/InventoryServiceClient.java
 
 ```java
-package net.youssfi.billingservice.feign;
+package net.atertour.billingservice.feign;
 
-import net.youssfi.billingservice.model.Product;
+import net.atertour.billingservice.model.Product;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.hateoas.PagedModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6651,13 +6651,13 @@ public interface InventoryServiceClient {
 ## web/BillRestController.java
 
 ```java
-package net.youssfi.billingservice.web;
+package net.atertour.billingservice.web;
 
-import net.youssfi.billingservice.entities.Bill;
-import net.youssfi.billingservice.feign.CustomerServiceClient;
-import net.youssfi.billingservice.feign.InventoryServiceClient;
-import net.youssfi.billingservice.repository.BillRepository;
-import net.youssfi.billingservice.repository.ProductItemRepository;
+import net.atertour.billingservice.entities.Bill;
+import net.atertour.billingservice.feign.CustomerServiceClient;
+import net.atertour.billingservice.feign.InventoryServiceClient;
+import net.atertour.billingservice.repository.BillRepository;
+import net.atertour.billingservice.repository.ProductItemRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -6733,7 +6733,7 @@ eureka.instance.prefer-ip-address=true
 gateway-service/
 ├── src/
 │   └── main/
-│       ├── java/net/youssfi/gatewayservice/
+│       ├── java/net/atertour/gatewayservice/
 │       │   ├── GatewayServiceApplication.java
 │       │   └── config/
 │       │       └── CorsConfig.java
@@ -6761,7 +6761,7 @@ gateway-service/
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>gateway-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <n>gateway-service</n>
@@ -6832,7 +6832,7 @@ gateway-service/
 ## GatewayServiceApplication.java
 
 ```java
-package net.youssfi.gatewayservice;
+package net.atertour.gatewayservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6865,7 +6865,7 @@ public class GatewayServiceApplication {
 ## config/CorsConfig.java
 
 ```java
-package net.youssfi.gatewayservice.config;
+package net.atertour.gatewayservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7579,7 +7579,7 @@ ng serve
 chatbot-service/
 ├── src/
 │   └── main/
-│       ├── java/net/youssfi/chatbotservice/
+│       ├── java/net/atertour/chatbotservice/
 │       │   ├── ChatbotServiceApplication.java
 │       │   ├── agents/
 │       │   │   └── AIAgent.java
@@ -7614,7 +7614,7 @@ chatbot-service/
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>chatbot-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <n>chatbot-service</n>
@@ -7708,9 +7708,9 @@ chatbot-service/
 ## ChatbotServiceApplication.java
 
 ```java
-package net.youssfi.chatbotservice;
+package net.atertour.chatbotservice;
 
-import net.youssfi.chatbotservice.telegram.TelegramBot;
+import net.atertour.chatbotservice.telegram.TelegramBot;
 import org.springframework.ai.document.DocumentReader;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.reader.pdf.PdfDocumentReader;
@@ -7778,7 +7778,7 @@ public class ChatbotServiceApplication {
 ## agents/AIAgent.java
 
 ```java
-package net.youssfi.chatbotservice.agents;
+package net.atertour.chatbotservice.agents;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
@@ -7875,9 +7875,9 @@ public class AIAgent {
 ## telegram/TelegramBot.java
 
 ```java
-package net.youssfi.chatbotservice.telegram;
+package net.atertour.chatbotservice.telegram;
 
-import net.youssfi.chatbotservice.agents.AIAgent;
+import net.atertour.chatbotservice.agents.AIAgent;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -8006,7 +8006,7 @@ app.document.path=classpath:documents/cv.pdf
 spring.ai.mcp.client.streamable-http.connections.mcp-tools.url=http://localhost:8989/mcp
 
 # Logging
-logging.level.net.youssfi.chatbotservice=DEBUG
+logging.level.net.atertour.chatbotservice=DEBUG
 logging.level.org.springframework.ai=INFO
 
 ```
@@ -8087,7 +8087,7 @@ The MCP Server provides external tools/functions that can be called by AI agents
 mcp-server/
 ├── src/
 │   └── main/
-│       ├── java/net/youssfi/mcpserver/
+│       ├── java/net/atertour/mcpserver/
 │       │   ├── McpServerApplication.java
 │       │   ├── tools/
 │       │   │   └── EmployeeTools.java
@@ -8118,7 +8118,7 @@ mcp-server/
         <relativePath/>
     </parent>
 
-    <groupId>net.youssfi</groupId>
+    <groupId>net.atertour</groupId>
     <artifactId>mcp-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <n>mcp-server</n>
@@ -8187,7 +8187,7 @@ mcp-server/
 ## McpServerApplication.java
 
 ```java
-package net.youssfi.mcpserver;
+package net.atertour.mcpserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8209,7 +8209,7 @@ public class McpServerApplication {
 ## model/Employee.java
 
 ```java
-package net.youssfi.mcpserver.model;
+package net.atertour.mcpserver.model;
 
 public record Employee(
     String name,
@@ -8233,9 +8233,9 @@ public record Employee(
 ## tools/EmployeeTools.java
 
 ```java
-package net.youssfi.mcpserver.tools;
+package net.atertour.mcpserver.tools;
 
-import net.youssfi.mcpserver.model.Employee;
+import net.atertour.mcpserver.model.Employee;
 import org.springaicomunnity.mcp.annotation.McpArg;
 import org.springaicomunnity.mcp.annotation.McpTool;
 import org.springframework.stereotype.Component;
@@ -8253,7 +8253,7 @@ public class EmployeeTools {
     // Sample employee database
     private final List<Employee> employees = List.of(
         new Employee("Hassan Al-Masri", 12300, 4, "IT", "Software Developer"),
-        new Employee("Mohamed Youssfi", 34000, 1, "IT", "Senior Architect"),
+        new Employee("Mohamed atertour", 34000, 1, "IT", "Senior Architect"),
         new Employee("Imane Benali", 23000, 10, "HR", "HR Manager"),
         new Employee("Yassine Alami", 18500, 3, "Finance", "Financial Analyst"),
         new Employee("Sara Jebari", 27000, 6, "IT", "DevOps Engineer"),
@@ -8406,7 +8406,7 @@ spring.ai.mcp.server.protocol=streamable
 spring.ai.mcp.server.version=1.0.0
 
 # Logging
-logging.level.net.youssfi.mcpserver=INFO
+logging.level.net.atertour.mcpserver=INFO
 logging.level.org.springframework.ai=DEBUG
 
 # Server Configuration
@@ -8454,7 +8454,7 @@ Once both services are running:
 
 Send these messages to your Telegram bot:
 
-- "What is Mohamed Youssfi's salary?"
+- "What is Mohamed atertour's salary?"
 - "List all employees"
 - "Who works in the IT department?"
 - "What's the average salary?"
@@ -8825,7 +8825,7 @@ telegram.bot.token=...
 
 ### 4.3 MCP Tools
 
-**Send:** "What is Mohamed Youssfi's salary?"
+**Send:** "What is Mohamed atertour's salary?"
 
 **Explain:**
 "Now the bot is using external tools via MCP. GPT-4 realizes it needs employee data, calls the getEmployee tool on the MCP Server, gets the result, and formats the response."
@@ -9409,7 +9409,7 @@ telegram.bot.token=...
 
 ### 4.3 MCP Tools
 
-**Send:** "What is Mohamed Youssfi's salary?"
+**Send:** "What is Mohamed atertour's salary?"
 
 **Explain:**
 "Now the bot is using external tools via MCP. GPT-4 realizes it needs employee data, calls the getEmployee tool on the MCP Server, gets the result, and formats the response."
@@ -9739,4 +9739,4 @@ The **Submission Guide** artifact contains:
 - Show that you understand **microservice patterns**
 - Be ready to discuss **production considerations**
 
-You now have everything you need to submit and pass your evaluation. All code is tested, documented, and follows best practices from Professor Youssfi's lectures. Good luck! 🚀
+You now have everything you need to submit and pass your evaluation. All code is tested, documented, and follows best practices from Professor atertour's lectures. Good luck! 🚀

@@ -1,5 +1,6 @@
 package net.atertour.billingservice.web;
 
+import jakarta.validation.Valid;
 import net.atertour.billingservice.dto.BillRequest;
 import net.atertour.billingservice.entities.Bill;
 import net.atertour.billingservice.service.BillService;
@@ -16,12 +17,18 @@ public class BillRestController {
     }
 
     @PostMapping
-    public ResponseEntity<Bill> createBill(@RequestBody BillRequest billRequest) {
-        try {
-            Bill bill = billService.createBill(billRequest.getCustomerId(), billRequest.getProductItems());
-            return ResponseEntity.ok(bill);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().build();
-        }
+    public ResponseEntity<Bill> createBill(@Valid @RequestBody BillRequest billRequest) {
+        Bill bill = billService.createBill(billRequest.getCustomerId(), billRequest.getProductItems());
+        return ResponseEntity.ok(bill);
+    }
+
+    @GetMapping("/fullBill/{id}")
+    public Bill getBill(@PathVariable(name = "id") Long id) {
+        return billService.getBill(id);
+    }
+
+    @GetMapping("/byCustomer/{customerId}")
+    public java.util.List<Bill> getBillsByCustomer(@PathVariable(name = "customerId") Long customerId) {
+        return billService.getBillsByCustomerId(customerId);
     }
 }

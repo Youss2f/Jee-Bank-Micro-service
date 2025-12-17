@@ -7,10 +7,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Embeddable
-@NoArgsConstructor @AllArgsConstructor @Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class ProductItem {
     private String productId;
     private int quantity;
     private double price;
     private double total;
+    @jakarta.persistence.Transient
+    private String productName;
 }

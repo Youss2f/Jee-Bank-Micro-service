@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            Bills List for Customer {{customerId}}
+        </div>
+        <div class="card-body">
+            <table class="table table-striped" *ngIf="bills && bills.length > 0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Billing Date</th>
+                        <th>Total Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let b of bills">
+                        <td>{{b.id}}</td>
+                        <td>{{b.billingDate | date:'medium'}}</td>
+                        <td>{{b.total | number:'1.2-2'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="!bills || bills.length === 0" class="alert alert-warning">
+                No bills found for this customer.
+            </div>
+        </div>
+    </div>
+</div>

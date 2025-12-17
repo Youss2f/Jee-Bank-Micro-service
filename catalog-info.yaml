@@ -1,0 +1,67 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: jee-bank-system
+  description: E-commerce Microservices Architecture Banking System
+  tags:
+    - java
+    - spring-cloud
+    - finance
+spec:
+  owner: youssef-team
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: customer-service
+  description: Manages customer data and profiles
+  tags:
+    - spring-boot
+    - java
+    - microservice
+spec:
+  type: service
+  lifecycle: experimental
+  owner: youssef-team
+  system: jee-bank-system
+  dependsOn:
+    - component:config-service
+    - component:discovery-service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: inventory-service
+  description: Manages product inventory and stock
+  tags:
+    - spring-boot
+    - java
+    - microservice
+spec:
+  type: service
+  lifecycle: experimental
+  owner: youssef-team
+  system: jee-bank-system
+  dependsOn:
+    - component:config-service
+    - component:discovery-service
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: billing-service
+  description: Manages billing and orders
+  tags:
+    - spring-boot
+    - java
+    - microservice
+spec:
+  type: service
+  lifecycle: experimental
+  owner: youssef-team
+  system: jee-bank-system
+  dependsOn:
+    - component:config-service
+    - component:discovery-service
+    - component:customer-service
+    - component:inventory-service

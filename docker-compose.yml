@@ -1,0 +1,107 @@
+version: '3.8'
+services:
+  discovery-service:
+    build:
+      context: .
+      dockerfile: discovery-service/Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - bank-network
+
+  config-service:
+    build:
+      context: .
+      dockerfile: config-service/Dockerfile
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=native
+    depends_on:
+      - discovery-service
+    networks:
+      - bank-network
+    volumes:
+      - ./config-repo:/app/config-repo
+
+  gateway-service:
+    build:
+      context: .
+      dockerfile: gateway-service/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - DISCOVERY_SERVICE_URL=http://discovery-service:8761/eureka/
+    depends_on:
+      - discovery-service
+      - config-service
+    networks:
+      - bank-network
+
+  customer-service:
+    build:
+      context: .
+      dockerfile: customer-service/Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/bank_db
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - discovery-service
+      - config-service
+      - postgres
+    networks:
+      - bank-network
+
+  inventory-service:
+    build:
+      context: .
+      dockerfile: inventory-service/Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/bank_db
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - discovery-service
+      - config-service
+      - postgres
+    networks:
+      - bank-network
+
+  billing-service:
+    build:
+      context: .
+      dockerfile: billing-service/Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/bank_db
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=password
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    depends_on:
+      - discovery-service
+      - config-service
+      - postgres
+    networks:
+      - bank-network
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: bank_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bank-network
+
+networks:
+  bank-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
